@@ -1,0 +1,486 @@
+1. How Excel treats text, times and dates data
+
+- In C4, put 57.   We notice, 57,which is a number, is right aligned
+- In F4, put 'apple'. We notice, 'apple', which is a text, is left aligned
+- In I4, put 12:00PM.
+- In I5, put 21:00
+Now, copy cell I4 and I5, first select using shift + down arrow, then ctrl + c,
+then click on J4 and then under Home tab, there is paste option on J4 and J5, 
+click on 'paste special' or use the shortcut for paste special,
+'ctrl + alt + v', then press on values.
+We notice that on J4 and J5, it is storing those values as decimals.
+
+
+On american format, date is in the format of 'month-day-year'.
+- In K4, put the date on american format, 1/1/2018.
+- In K5, put the date on american format, 1/1/2022.
+- In K6, put the date on american format, 1/1/1900.
+
+Again, select the cells K4, K5 and K6. copy them by ctrl + c. then click on
+L4 cell
+Then, use the shortcut for paste special by 'ctrl + alt + v', and then 
+press on values.
+
+Again, select the cells K4, K5 and K6. press 'ctrl + 1', and select 'date' and then
+press on the date format you desire
+We notice that on L4, L5 and L6, the dates are stored those values as numbers.
+
+
+
+
+
+
+2. Change the case of a text
+- Select A3 cell and B3 cell, then on C3 cell, put '=upper(A3)' and 
+on D3 cell, put '=upper(B3)'.
+- Now, select from C3 cell and drag it all the way to the bottom to apply the
+upper case formula.
+- Again, select from D3 cell and drag it all the way to the bottom to apply the
+upper case formula.
+
+- On E3 cell, put '=lower(A3)' and on F3 cell, put '=lower(B3)'.
+-Now, select from E3 cell and drag it all the way to the bottom to apply the
+lower case formula.
+- Again, select from F3 cell and drag it all the way to the bottom to apply the
+lower case formula.
+
+- On G3 cell, put '=proper(A3)' and on H3 cell, put '=proper(B3)'.
+-Now, select from G3 cell and drag it all the way to the bottom to apply the
+proper case formula.
+-Again, select from H3 cell and drag it all the way to the bottom to apply the
+lower case formula.
+
+
+
+
+
+
+3. Combining Strings of Text Together.
+
+Under 'Username' column
+- On C2 cell, put '=A2 & B2'. It will combine the strings.
+You can also do it another way, put '=lower(A2 & B2)'.
+Again, in another way to make it more clear, put '=lower(A2&"."&B2)'.
+Select from C2 cell and drag it all the way to the bottom, to 
+apply the combining formula.
+
+Under 'Full Name' column
+- On D2 cell, put '=proper(A2&" "&B2)'.
+Select from D2 cell and drag it all the way to the bottom, to apply
+the combining formula.
+
+
+
+
+
+4. Cutting Substrings from a Text.
+
+Under '1st 3 Letters' column
+- On E2 cell, put '=left(B2,3)', it will give first 3 letters.
+Now, select E2 cell and drag it till the bottom so that the formula is applied
+to get first 3 letters.
+
+Under 'Initials' column
+- On F2 cell, put '=left(A2) & left(B2)', it will give the initials of 'First Name'
+and 'Last Name'. Another way, put 'left(A2)& "." &left(B2)&"." '. 
+Now, select F2 cell and drag it till the bottom so that the formula is applied
+to get the initials of first name and last name.
+
+Under 'Zipcode' columns
+zipcode has 5 characters.
+- On G2 cell, put '=right(D2, 5), it will give the zip codes.
+Now, select G2 cell and drag it till the bottom, so that the formula is applied
+to get the zipcodes.
+
+
+Under 'Email Provider-Wrong' column
+
+the 'mid' functions allows us to take a text and decide from where we want to
+start.
+
+- On H2 cell, put '=mid(C2,10,5)'. We select C2 cell, starting from 10th character
+and with 5 characters long.
+Now, select G2 cell and drag it till the bottom, so that the formula is applied
+to get the email, which is a wrong way.
+
+
+
+
+
+
+5. Using the FIND Function
+
+Under 'LEN()' column
+- len is used to find the length of the characters.
+On D2 cell, put '=len(A2)', it will give the length of the characters in A2 cell.
+Select from D2 cell and drag it till to the bottom, so that the formula is 
+applied to get the length of the corresponding cells.
+
+Under 'Find()' column
+- find is used to find a particular character or a string within a set of strings or 
+an existing text.
+On E2 cell, put '=find("@", A2), it will give the position of '@' in A2 cell about 
+from where it starts. We see, '@' starts from the 9th position.
+Select from E2 cell and drag it till to the bottom, so that the formula is 
+applied to get the position of '@' in corresponding cells from where it starts.
+
+
+Under 'Starting Point' column
+We are finding out the starting point like when 'gmail.com' or 'yahoo.com' or 'live.com'
+starts. Specifically, after '@' what is the starting point of the character that 
+comes after '@'.
+
+- on F2 cell, put '=find('@',A2) + 1', it will give the start point of what comes
+after '@' in A2 cell.
+
+
+Under '# of Characters' column
+We are finding the length of 'gmail' or 'yahoo' or 'live' or find the length
+of the email provider.
+len(email) - length of '.com' which is 4 - everything uptill the '@' symbol.
+
+- On G2 cell, put '=len(A2) - find('@', A2) - 4, 
+it will give the email provider name on A2 cell. 
+
+Select from G2 cell and drag it till the bottom to get the length of the 
+email character.
+
+
+
+Under 'Email Provider - Right' column
+
+- On H2 cell, put '=mid(A2, F2, G2)', it will give you the correct email provider in cell A2.
+Select from H2 cell, and drag it till the bottom to get the correct email provider in the 
+corresponding cell.
+
+
+
+
+
+
+
+6-Searching for Specific Text in Data.
+
+The specific text we are searching for is 'gmail
+
+Under 'Find()' column
+- We are finding when does 'gmail' starts at which position.
+
+On C2 cell, put '=find("gmail", A2), we notice it gives us a number.
+If it does not give us an number but gives us 'Value!', 
+that it means it is an error.
+
+Select the C2 cell and drag it till the bottom to get the corresponding values.
+
+
+
+Under 'ISNUMBER()' column
+
+On D2 cell, put '=ISNUMBER(FIND("gmail", A2)), we get the value TRUE.
+Select from D2 cell and drag it till the bottom to get the corresponding
+values.
+
+
+Under 'IF()' column
+
+On E2 cell, put '=IF(ISNUMBER(Find("gmail", A2)), A2, ' ')', we are
+writing a condition if the condition is true, give the email address,
+otherwise give us the empty string.
+Select from E2 cell and drag it till the bottom to get the corresponding 
+values.
+
+
+Under 'NY?' column
+ 
+We are finding out whether it is a New York Address.
+
+On F2 cell, put '=IF(ISNUMBER(FIND("NY",B2)), B2, "")', 
+we are setting the condition if the condition is true, give the physical 
+address otherwise give the empty string.
+Select from F2 cell and drag it till the bottom to get the corresponding 
+results.
+
+
+
+
+
+
+
+
+
+
+7. Splitting a Text Field into Multiple Columns.
+
+- Select from A2 till the bottom. 
+Then go to Data -> text to column -> delimited -> comma.
+
+- Select from B2 till the bottom.
+Then go to Data -> text to column -> delimited -> space.
+
+Then, select from C2 to D26. copy them and then 
+use 'ctrl + alt + v' for paste special.
+
+Then, press on D column and right-click and press 'clear contents'.
+
+
+
+
+
+
+
+
+
+8. Converting Dates from Text into Values.
+
+Under 'Data Text' column.
+- On D2 cell, put '=A2&" "&B2&","&C2.
+Select D2 cell and drag it till the bottom so that the formula is applied.
+
+
+Under 'Date Value' column.
+- On E2 cell, put '=datevalue(D2)'. We get the values of Date Text.
+Select from E2 cell and drag it till the bottom so that the formula is applied.
+Select from E2 cell till the bottom, then press 'ctrl + 1', go to 'date' 
+and select your chosen date format.
+
+Under 'Check' column.
+-On F2 cell, put '=if(E2>$G2$2, 'Later', 'Earlier')'. You are putting $G$2,
+it is anchoring it.
+Select F2 cell and drag it till the bottom so the formula is applied.
+
+
+
+
+
+
+
+
+
+9. Adding and Subtracting Dates.
+
+- On C6 cell, put '=C2 + C4', we shift forward the days by 90 days.
+- On C8 cell, put ='C2 - C4', we shift backward the days by 90 days.
+
+
+Go to 'Purchases' sheet and then again go to 'Sheet1'.
+In Sheet1,
+- On D15 cell, 
+put '=COUNTIF(Purchases!$A$2:$A$2001,"<"&Sheet1!$D$12+Sheet1!C15)'.
+
+-On D17 cell,
+put '=COUNTIF(Purchases!$A$2:$A$2001,"<"&Sheet1!$D$12+Sheet1!C17)'.
+
+- On D19 cell,
+put =COUNTIF(Purchases!$A$2:$A$2001,"<"&Sheet1!$D$12+Sheet1!C19)'.
+
+
+
+
+
+
+
+
+
+
+10. Compiling Montly and Annual Totals.
+
+Aim is to find out which month and year has more sales with purchases.
+
+Go to 'Purchases' Sheet
+- On B2 cell, put '=month(Select cell A2)'.
+Select cell B2 and drag it till the bottom so the month formula is applied.
+
+- On C2 cell, put '=year(Select cell A2)'.
+Select cell C2 and drag it till the bottom so that year formula is applied.
+
+
+Go to 'Sheet1'
+
+-On D2 cell, put '=countif('select the cells under month from Purchases Sheet',
+ select C2 cell from Sheet1).
+Select D2 till D13, copy, then ctrl + alt + v, then click 'formulae'.
+
+- On I2 cell, put '=countif('select the cells under year from Purchase Sheet', 
+select H2 cell from Sheet1).
+Copy I2 cell, then select from I2 cell till the bottom, then press,
+ctrl + alt + v, then press formula.
+
+
+
+
+
+
+
+
+
+
+
+
+11.Conducting Day of the Week Analysis.
+
+Go to 'Purchases' Sheet.
+- On B2 cell, put '=weekday(A2)' and on C2 cell, put '=text(B2, 'dddd')'.
+Select B2 and C2 cell and drag it till the bottom, so that the formula is applied.
+
+
+Go to Sheet1.
+
+- On D2 cell, put '=countif('select the cells under Day of Week from Purchases, select C2 cell from Sheet1).
+copy D2 cell and select till D8, then ctrl + alt + v, then press formula.
+
+
+
+
+
+
+
+12. Combining Date with Time Data.
+
+- On D2 cell, put '=C2+B2'. It will give us datetime.
+After that on the side of D2, click two times. All the corresponding
+formulas will be applied throught the cell.
+
+- On D2 cell, press 'ctrl + shift + down arrow', then press 'ctrl + 1',
+go to 'customs', then click on m/d/yyyy h:mm, then customize it like this
+m/d/yyyy h:mm AM/PM.
+
+- To sort the column 'DateTime' only and if you want to get rid of 'Date'
+and 'Time' column, remember that 'DateTime' depends on 'Time' and 'Date'.
+
+So, inorder to perform operations on the cells under 'DateTime', you need to
+copy those cells under 'DateTime', First select and then ctrl + c.
+Later, on under the same column 'DateTime', 'ctrl + alt + v', press 'values'.
+
+Now, delete the columns of 'Date' and 'Time' along will all its data.
+
+You see there will not effect on DateTime, since you copy and pasted it on the same column of 'DateTime'.
+
+- Select all the data under the columns of 'Registration' and 'DateTime' from A1 to B2000, then
+to Data tab, Data-> Sort, select 'DateTime' and 'Oldest to Newest'.
+
+Congratulations, now we see the sorted value.
+
+
+
+
+
+
+
+
+
+13-Adding and Subtracting Time.
+
+Go to Sheet1:
+
+We notice that there is Registration ID and Registration Time. Our aim is to add
+4hours as a reminder to those IDs attending a webinar.
+
+All the cells under 'Registration Time' is in integer and when you put under
+'Reminder Sent' , '=B2 + 4', it will give you after 4 days. 
+We do not want that, we only want to update the time, not the days.
+So, in C2 cell, put '=B2 + "4:00", it will update the time after 4 hours.
+
+
+Another way of doing is, in E2 cell, put '4:00'.
+
+then again, in C2 cell, put 'B2 + $E$2', we are anchoring them incase, we 
+decide the change it to 5:00 or 10:00, it is the best way.
+
+Now, on the corner of C2, double click so that all the formulas are applied 
+across the cell.
+
+
+
+Go to Sheet2:
+
+To calculate the 'Average time between registration', we need to sort them.
+Inorder to do that, select the cells under 'Registration ID' and 'Registration Time',
+from A2: B2000, go to Data->Sort, then select 'Registration Time' and sort it 
+from 'Oldest' to 'Newest'.
+
+- In C3 cell, put '=B3-B2', it will give us the 'Time Between Registration'.
+Then, double click on the corner of C3 cell, so that the formula is applied 
+throughout the 'Time Between Registration'.
+
+Then select the cells from C3 till the bottom, then, press 'ctrl + 1',
+go to time, then select in 24hour format, like 13:30.
+
+Now to go to E2 cell, put '=average(Select the cells under 'Time Between Registration').
+
+
+
+
+
+
+
+
+
+
+
+14-Conducting Hours of the Day Analysis.
+
+
+Go to Sheet1:
+
+Our aim is to calculate the number of registrations from certain hours of the day.
+Like, what is the number of registrations between 12:00 AM to 3:00 AM.
+
+Now, go to Sheet2:
+
+We need a numerical value for DateTime Value.
+- In C2 cell, put '=numbervalue(B2)', it will give us the numerical value.
+Doubleclick on C2 cells so that the formula of numerical value is applied 
+under 'DateTime Value'.
+
+So, the datetime value is in fractional, since, we are only working with the 
+time, we need to eliminate the day. Inorder to do that,
+
+- In D2 cell, put '=C2 - int(C2)'. This will give us the time portion.
+Then double-click on the side of D2 cell, so that the formula is applied 
+throught the cells under column 'Time Only'.
+select all the cells under 'TimeOnly', then 'ctrl + 1', click time and select
+'1:30PM'.
+
+
+
+Now, go to Sheet1:
+
+countifs allows to have multiple checks.
+
+-Our first criteria is the range that is the cells under Time Only under 'Sheet2'.
+- first criteria should be greater than the time coming under 'From' column.
+- Second criteria is that the range is less than the time coming under 'To' column.
+
+- In E3 cell, put '=COUNTIFS(Sheet2!$D$2:$D$2000,">"&'Sheet 1'!C3,Sheet2!$D$2:$D$2000,"<"&'Sheet 1'!D3)'.
+- Double-click on E3 cell, you will notice the formula is applied throught the cells under
+'# of Registrations'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

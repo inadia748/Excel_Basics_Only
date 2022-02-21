@@ -1,0 +1,287 @@
+1- LookUp with VlookUp.
+- In K2 cell, put '=vlookup(Select the J2 cell, Select the table from A2 to H381 then press F4, 2, False).
+Since, campaign in 2nd column thats we put '2' in the vlook up.
+
+- In L2 cell, put '=vlookup(Select the J2 cell, Select the table from A2 to H381 then press F4, 7, False).
+Since, campaign in 7th column thats we put '7' in the vlook up.
+Double click on L2 cell so that the formula is applied till the bottom.
+
+- In K2 cell, put '=vlookup(Select the J2 cell, Select the table from A2 to H381 then press F4, 8, False).
+Since, campaign in 8th column thats we put '8' in the vlook up.
+Double click on K2 cell so that the formula is applied till the bottom.
+
+Vlookup works for both numbers and text.
+
+
+
+2- LookUp with HLOOKUP
+
+- In M4 cell, put '=HLOOKUP(L4,$B$3:$J$9,4,FALSE)'. Discount is in 4th row.
+Double click on M4 cell so that the formula is applied till the bottoms.
+
+- In N4 cell, put '=HLOOKUP(L4,$B$3:$J$9,7,FALSE)'. Total is in 7th row.
+Double click on N4 cell so that the formula is applied till the bottoms.
+
+- In O4 cell, put '=M4/N4', this will give percentage of signups from discount.
+double click on O4 cell so that the formula is applied till the bottoms.
+
+
+
+
+
+
+3- Name Arrays for Reuse and Readability.
+
+Go to 'marketing_perf' sheet
+-Select the entire table from A1 to H381. then go to Formulas tab.
+Formula -> Define Name -> In Name, write 'Marketing_Perf', then click ok and close. 
+or press ctrl + F3 then press 'new' then go to Define Name -> In Name, write 'Marketing_Perf',
+then click 'ok' and 'close'.
+
+- Go to cell K2, press F2, then instead of '$A$1 to $H$381, just write 'Marketing_Perf'.
+- Similarly in L2 and M2, instead of '$A$1 to $H$381, just write 'Marketing_Perf'.
+
+
+Go to 'signups' sheet.
+
+- Select the entire table from B3 to J9, then press 'ctrl + F3', then click on 'new',
+then go to Define Name -> in Name, write 'SignUps'. then click ok and close.
+
+- In M4 cell, press F2, then instead of '$A$1 to $J$9, just write 'SignUps'. Double click on M4 cell so that the formula is applied till the bottom.
+- Similarly in N2, instead of '$A$1 to $J$9, just write 'SignUps'. Double click on N4 cell so that the formula is applied till the bottom.
+
+
+
+
+
+
+
+
+
+
+4- Group Records with Nested If statements.
+
+Our aim is to group them based on a certain values.
+Example:- How much it costs to generate a sign up for the website?
+
+- In I2 cell, put '= H2/E2'. It gives cost per sign up.
+Doubleclick on I2 cell so that the formula is applied to the bottom .
+
+low cost: $0 to $0.50
+medium cost: $0.50 to $1.50
+high cost: $1.50+
+
+- In J2 cell, put '=if(I2 <= 0.50, "low", if(I2 <= 1.50, "Medium", "high")).
+
+- In K2 cell, put '= G2/F2'. It is sales per conversion. Double click on K2 cell so that the 
+formula is applied till the bottom.
+
+low: <= $75
+med: <= $200
+high: > $200
+
+-In L2 cell, put '=IF(K2 <= 75, "low", IF(K2 <= 200, "medium", "high")).
+	Doubleclick on L2 cell so that the formula is applied through out the bottom.
+
+
+
+
+
+
+
+
+
+
+
+
+
+5- Avoid Errors with IF and ISNUMBER.
+
+- ctrl + F, write '#DIV/0', you will some errors.
+
+Inorder to avoid that error,
+
+- In I2 cell, put '= if(E2 > 0, H2/E2, ""). This will avoid the error.
+double click on I2 cell so the formula is applied till the bottom.
+
+- In J2 cell , put '=IF(ISNUMBER(I2), IF(I2 <=0.5, "low",  IF(I2 <=1.5, "medium", "high")),"UNTESTED")'
+
+- In K2 cell, put '= IF( G2 > 0, G2/F2, "")'. double click on K2 cell so that the formula is 
+applied till the bottom.
+
+- In L2 cell, put '=IF(K3<=75,"Low",IF(K3<=200,"Medium","High")), "Untested")'. double click on L2 cell so
+that the formula is applied till the bottom.
+
+
+
+
+
+
+
+
+
+
+
+6- Create Dropdown Lists for Filtering.
+
+Dropdown lists are used for creating dashboards.
+
+-  Click on C3 cell, then Go to Data -> Data Validation -> list, 
+for the sources , go to 'signups' sheet, select cell from C3 to I3. 
+Then click ok.
+
+- Go to E3 cell, put '= countif(go to 'marketing_perf' sheet then select the cells under category, go to the dashboard and click on C3 cell).
+In E3 cell, put '=COUNTIF(marketing_perf!C2:C381,dashboard!C3)'.
+
+- In C6 cell,put '= sumif(go to 'marketing_perf' sheet then select the cells under Category column, Go to the dashboard then click on C3, go to 'marketing_perf' sheet and select the cells under Ad cost).
+Like this, '=SUMIF(marketing_perf!C2:C381,dashboard!C3, marketing_perf!H2:H381)
+
+- Go to 'marketing_perf' sheet, go to column 'Category' and select all the cells under it. 
+then press, 'Ctrl + F3', click 'new', write 'Category'. 
+
+Then in cell C6, put ' =SUMIF(Category,dashboard!C3, marketing_perf!H2:H381)'.
+also in E3 cell, put '= COUNTIF(Category,dashboard!C3)'.
+
+
+- Click on J3 cell, then go to Data -> Data Validation -> list, in sources, go to 'signup' sheet, select cells from
+B4 to B9. 
+
+
+
+
+
+
+
+
+
+
+
+
+7- Create Unique Lists.
+
+Go to 'marketing_perf' sheet, select the cells under Category and then copy them by 'ctrl + c'.
+Then go to 'misc' sheet, and paste them by 'ctrl + v' under Unique Category.
+Select all the cells under Unique Category and then go to Data->Remove Duplicates.
+Then select all cells on Unique Category from A1 to A8, then go to Data -> Sort -> Select A to Z.
+
+Go to 'marketing_perf' sheet, select the cells under Campaign and then copy them by 'ctrl + c'.
+Then go to 'misc' sheet, and paste them by 'ctrl + v' under Unique Campaign.
+Select all the cells under Unique Category and then go to Data-> Remove Duplicates.
+Then select all cells on Unique Campaign from C1 to C8, then go to Data -> Sort -> Select A to Z.
+
+Go to 'dashboard' sheet, click on C3 cell, then click on Data-> Data Validation -> Select the cells on 'misc' sheet under Unique Categories.
+Go to 'dashboard' sheet, click on J3 cell, then click on Data -> Data Validation -> Select the cells on 'misc' sheet under Unique Campaigns.
+
+
+To check if a column is unique or not:
+- Go to 'marketing_perf' sheet, then select the cells under Unique Key Phrases.
+then go to Data -> Remove Duplicates. You can see whether that column has duplicates or not.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8- Fast Lookup with Index and Match.
+
+Index and Match is much faster and needed when tables get bigger than 
+vlookup and hlookup.
+
+- In P2 cell, put '=index('select cells from E2 to H2, 2)'. It gives us the second value since we put '2'.
+
+- In P3 cell, put '=index('select cells from H2 to H5, 3)'. It gives us the third value since we put '3'.
+
+-In P4 cell, put '=index('select cells from A2 to H5, 2, 3)'. It gives us the second row since we put '2' and 3rd column since we put '3'.
+
+- In P5 cell,put '=index('marketing_perf', 4), It will give use reference error. It needs 2 indices inorder to be correct.
+
+- In P6 cell, put '=index('marketing_perf', 4, 7), It will give us 4th row since we put '4' and 7th column since we put '7'.
+
+- In P7 cell, put '=index('marketing_headers', 2). It gives us second value since we put '2'.
+
+
+
+Match returns an index inside a row.
+
+- In P9 cell, put '=match("cheap designer clothes", select cells from A2 to A9, 0). It gives us 4, since it is the 4th element from A2 to A9 cells.
+
+- In P10 cell, put '=match("Signups", marketing_headers, 0). It gives us 5, since it is the 5th element in marketing headers.
+
+- In P12 cell, put 'diaper bag'
+- In P13 cell, put 'Sales'
+
+- In P15 cell, put '=vlookup(P12, marketing_perf, 7, false), 7 because Sales in in 7th column.
+
+- In P16 cell, put '=INDEX(MARKETING_PERF, MATCH(P12, UNIQUE_KEYPHRASES, 0), MATCH(P13, MARKETING_HEADERS, 0))'.
+
+
+
+
+
+
+
+
+9- Multi-Condition Lookup with DSUM
+
+- In J10 cell, put '=DSUM(MARKETING_PERF, "Ad Cost", J3:L4).
+- In J3, K3 and L3 which is of the columns Category, Campaign and Sales,
+Under Category column, in J4, write 'General'. 
+Under Campaign column, in K4, write 'None'.
+Under Sales column, in L4, write '<500'.
+
+
+- In J6 cell, put '=dcounta(marketing_perf, "Unique_Keyphrases", select from J3 to M4).
+
+
+
+
+
+
+
+
+
+10- Create Rankings with Small and Large.
+
+Go to 'marketing_perf' sheet, go to 'Signups' column, select the cells under
+'Signups' and press 'Ctrl + F3', then write 'SIGNUPS'.
+
+- In E383 cell, put '=MAX(SIGNUPS)'.
+- In E384 cell, put '=LARGE(SIGNUPS, 1)'.
+- In E385 cell, put '=LARGE(SIGNUPS, 2)'.
+- In E386 cell, put '=LARGE(SIGNUPS, 11)'.
+- In E387 cell, put '=SMALL(SIGNUPS, 11)'.
+
+Go to 'dashboard' sheet,
+
+- In F10 cell, put '=Large(if(category = click on cell C3 then press F4, signups, ""),1) then press 'ctrl + shift + enter'.
+- In F11 cell, put '=Large(if(category = click on cell C3 then press F4, signups, ""),2) then press 'ctrl + shift + enter'.
+- In F12 cell, put '=Large(if(category = click on cell C3 then press F4, signups, ""),3) then press 'ctrl + shift + enter'.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

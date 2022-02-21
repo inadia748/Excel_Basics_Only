@@ -1,0 +1,218 @@
+ What is Statistics?
+Gather Data, Prepare Data, Analyze Data and Interpret Data. Then, we draw some
+insights after these steps.
+
+Types of Statistics:
+1) Descriptive Statistics.
+2) Inferential Statistics.
+
+
+Descriptive Statistics:
+Collecting, organizing, summarizing and presenting data. It tends to 
+focus on areas like:
+- Measures of Central Tendency like mean, median, mode or quartiles.
+- Measures of dispersion like standard deviation and variance. It helps us
+understand how the data points are distributed and also range.
+
+
+
+Inferential Statistics.
+Drawing conclusions about a population based on sample data.
+
+
+
+
+
+
+1- Mean, Median and Mode
+
+Go to sheet1,
+
+- In I2 cell,
+ put '=sum('Select the cells under Quantity') / count('select the cells under Quantity).
+	or
+another way to do that, put '=average(Select the cells under Quantity)'.
+This is to find the mean or average of the Quantity.
+
+- In J2 cell, 
+put '=average('Select the cells under Order Value'). 
+This is to find the average of Order Value.
+
+- In I3 cell, 
+put = 'median('Select the cells under Quantity'). This is to find the median of 
+Quantity.
+
+- In J3 cell, 
+put '=median('Select the cells under Order Value'). This is to find the median of 
+Order Value.
+
+- In I4 cell, 
+put '=mode('Select the cells under Quantity'). This is to find the mode of the 
+Quantity. Which value appears frequently.
+
+- In J4 cell, 
+put '=mode('Select the cells under Order Value'). This is to find the mode of the 
+mode of the Order Value.
+
+
+- In I8 cell, put '=mode('Select the cells under Unit Price').
+
+- In I9 cell, put '=mode('Select the cells under Customer ID').
+
+- In I10 cell, put '=mode('Select the cells under Order ID').
+
+- In I11 cell, put '=mode('Select the cells under Case Type').
+
+We notice, in I10 and I11 cell, there will be an error. 
+Because, mode cannot calculate letters, it can calculate numeric values in case of 'Case Type'.
+and mode cannot calculate for Order ID because it is full of unique values,
+so mode cannot calculate that.
+
+
+
+Go to Sheet2:
+
+- In D4 cell, put '14'.
+- In D5 cell, put '8'.
+- In D6 cell, put '6'.
+- In D7 cell, put '2'.
+- In D8 cell, put '10'.
+
+- In G3 cell, put '=average('Select the cells under Hot Dogs in 10 minutes').
+- In G4 cell, put '=median('Select the cells under Hot Dogs in 10 minutes').
+
+
+
+
+
+
+
+2- Percentile and Percentile Rank
+
+- In G2 cell, put '= percentrank.exc('Select the cells under Order Value' then press F4 inorder to anchor it, select F2 as a reference).
+
+- In K8 cell, put '=percentile.exc('Select the cells under Quantity' then press F4, select J8).
+- In K9 cell, put '=percentile.exc('Select the cells under Quantity' then press F4, select J9).
+-In K10 cell, put '=percentile.exc('Select the cells under Quantity' then press F4, select J10).
+-In K11 cell, put '=percentile.exc('Select the cells under Quantity' then press F4, select J11).
+-In K12 cell, put '=percentile.exc('Select the cells under Quantity' then press F4, select J12).
+
+
+
+- In K16 cell, put '=percentile.exc('Select the cells under Order Value then press F4, select J16).
+- In K17 cell, put '=percentile.exc('Select the cells under Order Value then press F4, select J17).
+- In K18 cell, put '=percentile.exc('Select the cells under Order Value then press F4, select J18).
+- In K19 cell, put '=percentile.exc('Select the cells under Order Value then press F4, select J19).
+- In K20 cell, put '=percentile.exc('Select the cells under Order Value then press F4, select J20).
+
+
+
+
+
+
+
+
+3- Frequency Distributions or Data Dense.
+
+- In J8 cell, put '= max('Select the cells under Order Value').
+- In J9 cell, put '= min('Select the cells under Order Value').
+
+- In I13 cell, put '$500'.
+- In I14 cell, put '$1000'.
+- In I15 cell, put '$1500'.
+- In I16 cell, put '$2000'.
+- In I17 cell, put '$2500'.
+
+- Select all the cells from J13 to J17, then go to the formula
+function, put '= frequency('Select the cells under Order Value then press F4, select the cells from
+I13 to I17) then press 'ctrl + shift + enter'.
+
+Now, select cells from I12 to J17, then go to Data->Data Analysis -> Histogram.
+then in Histogram, for Input Range, 'Select the cells under Order Value'.
+and for Bin Range, 'Select the cells under Bins'. Then, click on 'Output Range': 'Select the cells I20'.
+
+Then, tick on Chart Output, then press OK.
+
+Then, go to Chart Design and select your preferred design.
+
+
+
+
+
+
+
+
+
+4- Standard Deviation and Variance.
+
+In Sheet1:
+- In K2 cell, put '=average('Select the cells under Order Value').
+- In G2 cell, put '= select F2 cell - Select K2 cell, then press F4.
+Right click on G2 cell so that the formula is appied througout the cells.
+- In H2 cell, put '= G2 ^2'. Double-click on H2 cell so that the formula is applied throught the bottom.
+
+- In K3 cell, put '=sum(Select the cells under Squared)/count(Select the cells under Order Value).
+
+- In K4 cell, put '=sqrt(K3)'. This gives standard deviation.
+
+- In K8 cell, put '=var.p(Select the cells under Order Value'). This gives us variance.
+
+- In K9 cell, put '=stdev.p(Select the cells under Order Value'). This gives us standard deviation.
+
+Here, you are finding the variance and standard deviance of Order Value.
+
+Repeat the same process in Sheet 2.  You will be finding the variance and standard deviance of Quantity.
+
+
+
+
+
+
+
+
+5- Trends in Data.
+
+We have daily revenues of an ecommerce sales.
+
+- In G2 cell, put '= averageif('Select the cells under Day of the Week then press F4, Select F2, Select the cells under Revenue then press F4). This
+gives average daily revenue on monday.
+Now, double click on G2 cell, so that the formula is applied throught the cells.
+
+- In H2 cell, put '= G2/ sum(select the cells under Avg Daily Revenue)'.
+Double click on H2 cell, so that the formula is applied through out.
+
+
+- In G11, put '=averageif('Select the cells under Month then press F4, F11, 'Select the cells under Daily Revenue' then press F4).
+- In H11, put '= G11/sum(select the cells under Avg Daily Revenue).
+
+
+
+
+
+
+
+
+
+
+
+6- Introduction to Correlation.
+
+- In H3 cell, put '=correl( Select the cells under Daily Revenue, Select the 
+cells under # of Orders)'. The correlation is between daily revenue and # of Orders.
+
+- In H4 cell, put '=correl( Select the cells under Daily Revenue, Select the 
+cells under Joe 's FB posts). This is the correlation between daily revenue and Joe 's FB posts.
+
+Now, go to Data tab, Data -> Data Analysis -> Select correlation, for input range: 'Select all three columns under Daily Revenue,
+# of Orders and Joe 's FB post'. -> tick on Labels in First Row. - On output range, click on any desired cells to show the output.
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,320 @@
+Basic Math Functions in Excel
+
+Note:
+a)'ctrl + shift + down-arrow', will select the columns under one block 
+like orderId, customer Id, Product type, unit price, quantity and order value.
+
+b) 'ctrl + shift + right-arrow', will select the rows from left to right.
+
+
+
+1) In F2 cell, put '=E2*D2'
+
+To do it for the rest of the cell down for Order Value,
+hover over to F2 cell, and double click, it will fill out the 
+value for Order value.
+
+2) In column I1, put '=count( 'select the number of columns under Quantity')
+  by select the column of Quantity, put 'shift + arrow-down'
+	It will count number values. this count function will 
+	count the columns under unit price, quantity, ordervalue
+        and customer id. It will not count the number of product types.
+
+
+
+In K1 cell,
+To count the number of product type, put 'counta(select the number of 
+columns under Product type)'.  
+'counta' is for used for counting columns or rows when letters are inputed.
+to select the column, put 'ctrl + shift + down-arrow'. 
+
+
+3) In I3 cell, put '=sum('Select under Order value')'.
+
+
+
+
+
+
+
+
+
+
+Conditional Math Functions:
+
+# of Orders.
+1) In I7 cell, put '=countif(select all the columns under Product_Type by
+'ctrl + shift + down-key' then press 'F4 key', H7), press Enter. 
+H7 is for iPhone8.
+
+2) In I8 cell, put '=countif(select all the columns under Product_Type by
+'ctrl + shift + down-key' then press 'F4 key', H8), press Enter. 
+H8 is for iPhone8s.
+You are counting the number of iphone8
+
+3) In I9 cell, put '=countif(select all the columns under Product_Type by
+'ctrl + shift + down-key' then press 'F4 key', H9), press Enter. 
+H9 is for iPhoneX.
+
+or when you apply the formula on I7 and to apply the formula for the 
+rest of the cells like I8 and I9,  hover over I7 cell and click till I9 and 
+double click them.
+
+4) In I10, put '=sum('select the cells from I7 to I9)'.
+
+
+Quantity Ordered.
+1) In J7, '=sumif('select the cells from product type then press F4', H7, 
+		'select the cells from Quantity then press F4'),
+	H7 for iPhone8.
+sum if is used to calculate the total number of iphone8 available.
+Do it similary for J8 and J9. Simply hover around J7 and click till J9,
+You will get the total number of iPhone8s and iPhoneX.
+
+
+Order Value.
+1) In  K7 cell, put '=sumif('select the cells from product type then press 
+F4', H7, 'select the cells from Order Value then press F4').
+	H7 for iPhone8.
+you are finding the total order value for iPhone8.
+Do it similary for K8 and K9. Simply hover around K7 and click till K9,
+You will get the total number of iPhone8s and iPhoneX.
+
+
+
+
+
+
+
+Min, Max, and Average Functions:
+
+1) In I2 cell, put '=min( select the columns under quantity)', will give you 
+minimum among quantity.
+2) In I3 cell, put '=max(select the columns under quantity)', will give you 
+maximum under quantity.
+3) In I4, put '=average(select the columns under quantity)', will give you
+average of the quantity.
+
+4) In J2 cell, put '=min(select the columns under order value)', will give the 
+minimum among order value.
+
+5) In J3 cell, put '=min(select the columns under order value)', will give the 
+minimum among order value.
+
+6) In J4 cell, put '=average(select the columns under order value)', will give the 
+average among order value.
+
+7) In I8 cell, put '=averageif(select the columns under product type then press 
+	F4, I7, select the columns under quantity then press F4).
+	I7 is for iPhone 8
+   You are calculating the average order quantity for Iphone8.
+
+8) In I9 cell, put '=averageif(select the columns under product type then press 
+	F4, I7, select the columns under order value then press F4).
+	I7 is for iPhone 8
+   You are calculating the average order value for Iphone8.
+
+
+
+
+
+
+
+Logical Operators And Functions:
+
+ 
+1) In I4 cell, write 12,500.
+2) In I5 cell, write $25,000 or $35000.
+
+Checking if 'Actual Total Order Quantity is greater than Target Total
+Order Quantity':
+1) In I9 cell, put ' =IF(I1 > I4, TRUE, FALSE).
+	I1 is Actual Total Quantity and I4 is Target Total Quantity.
+
+Checking if 'Actual Total Order Value is greater than Target Total Order Value':
+2) In I10 cell, put '=IF(I2 > I5, TRUE, FALSE).
+
+
+3) In I12 cell, put '=IF(AND(I9,I10),TRUE,FALSE)
+
+
+4) In I14 cell, put '=IF(OR(I9,I10),TRUE,FALSE)
+
+5) In I17 cell, put '=I1-I4', you are getting the difference between Actual
+Total Order Quantity and Target Total Order Quantity.
+
+6) In I18 cell, put '=I2-I5', you are getting the difference between Actual Total
+Order Value and Target Total Order Value.
+
+7) In J17 cell, put 'IF(I17>0,"Units Over Target", "Units Below Target")'.
+
+8) In J18 cell, put 'IF(I18>0, "Dollars Over Target", Dollars Below Target")'.
+
+
+
+
+
+
+
+
+
+Anchoring Cell References and Name:
+
+In Anchoring Sheet,
+1) In B6 cell, put '=B1' and hover over it and drag it till E9. We see A1, no 
+anchoring.
+
+2) In B11 cell, put '=$B1' and hover over it and drag it till E14. We see, $A1,
+column anchoring. Column anchoring, the columns have row values and row remains 
+the same or are fixed.
+
+3) In B16 cell, put '=B$1' and hover over it and drag it till E19. We see, A$1,
+row anchoring, the rows have column values and columns remains the same or are 
+fixed.
+
+4) In B21 cell, put '=$B$1' and hover over it and drag it till E24. We can, see,
+$A$1, it will have same values for rows and columns.
+
+In Naming Sheet,
+1) In I2, put '(9%)'.
+I2 is the tax rate.
+
+You want to apply the tax rate to all the sales tax, so you have to anchor them.
+2) In G2 cell, put '=F2 * $I$2', you are referencing to $A$1 anchoring style.
+Hover over G2 cell and drag it to the bottom.
+
+This is done when you cannot directly change the tax rate on each cell, it is
+very tiring. So, you are anchoring them.
+
+3) In J8 cell, put '=sum(select the columns under Sales Tax)'
+4) In K8 cell, put '=J5*I2', J5 is total sales value and I2 is tax rate.
+5) Click on I2 cell, go to topleft corner and rewrite 'I2' as 'Tax_Rate' and then
+  click on J5 cell, and go to topleft corner and rewrite 'J5' as 'Total_Order_Value'.
+  Then go to L8 cell, put '=Tax_Rate(press Tab) * Total_Order_Value(press tab)'.
+
+
+
+
+
+
+
+
+Array Functioning:
+
+1)Instead of using 'sum function under the order value columns' in L2 cell, we can put '=sum(select the cells
+under Quantity * select the cells under unit price)' and 
+then press 'ctrl + shift + enter'. If you do not press 'ctrl + shift + enter',
+the calculations will be enormously high which is not the correct value, that
+is why 'ctrl + shift + enter ' is pressed.
+
+2) In I10 cell, 
+put '=MIN(IF(select the rows under Product Type then press F4 = I$7(anchoring the row), select the columns
+under Order Value then press F4)), then press ctrl + shift + enter.
+Hover over I10 and drag it till K10, it will give you the minimum order value of iPhone8, iPhone8x and
+iPhoneX.
+
+
+3) In I11 cell, 
+put '=MAX(IF(select the rows under Product Type then press F4 = I$7(anchoring the row), select the columns
+under Order Value then press F4)), then press ctrl + shift + enter.
+Hover over I11 cll and drag it till K11, it will give maximum order value of 
+iPhone8, iPhone8s and iPhoneX.
+
+
+
+
+
+
+
+
+
+Formula Auditing:
+
+As you do more and more complicated analysis, working with larger spreadsheets,
+and especially as you construct complicated formulas across larger spreadsheets, 
+it 's very easy to make mistake in your formulas. So, inorder to spot your mistakes,
+you have 'Formula Auditing' in Excel.
+
+In your excel file named '7-Formula+Auditing, we see in B7, 
+Porfolio Value(USD)  with its value in C7, D7, E7, F7 and G7.
+
+Your aim is to convert those Porfolio value(usd) to its equivalent
+Value in Bitcoins, Value in Ether, Value in LiteCoins.
+
+Formula is Porfolio Value/USD-Bitcoin, Porfolio Value/USD-Etherium 
+and Porfolio Value/USD-Litecoin.
+
+1) In C11 cell, put '=C$9/$C3' for the formula. 
+
+Go to Formulas->Trace Precedents or Trace Dependents
+
+1) First select the C3 cell and go to Formulas->Trace Dependents.
+
+
+
+
+
+
+
+Fill Commands:
+
+1) In I3 cell, put '=sumif(select the columns under Product Type then press F4,
+	H3, Select all the columns under Order Value then press F4)
+
+2) In I9 cell, put '=sumif(select the columns under Product Type then press F4,
+	I8, Select all the columns under Quantity then press F4)
+
+
+
+
+
+
+
+IS Functions:
+
+1) In G2 cell, put '=if(ISBLANK(E2),"follow up", "")
+	or
+2) In G2 cell, put '=if(ISERROR(E2),"Error", "")
+	 or
+3) In G2 cell, put '=if(ISNUMBER(E2), "", "Error")
+
+4) select the cells from A to G, then go to Data->filter
+
+
+
+
+
+
+
+Rounding Numbers:
+
+1) In cell C2, put '12345.87654'
+
+2) In cell C5, put '=ROUND(select cell C2 (press F4, you are anchoring them), 2)'
+   Here anchoring means, $C$2.
+
+3) In cell C6, put '=ROUND($C$2 (select the cell C2 and then press F4), 1)'
+
+4) In cell C7, put '=ROUND($C$2, 0)
+
+6) In cell C8, put '=ROUND($C$2, -1)
+
+7) In cell C9, put '=ROUND($C$2, -2)
+
+8) In cell C11, put '=roundup($C$2, 1)
+
+9) In cell C12, put '=rounddown($C$2, 1)
+
+10) In cell C14, put '=roundup($C$2, -1)
+
+11) In cell C15, put '=rounddown($C$2, -1)
+
+
+
+
+
+
+
+
+
+

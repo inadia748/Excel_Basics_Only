@@ -1,0 +1,171 @@
+1) ctrl + ->, will show you till the end of the columns
+2) ctrl + down-arrow, will show you till the bottom of the rows.
+
+
+keyboard shortcuts
+3) to delete a cell, press the cell you want to delete and press 'delete' in your 
+keyboard.
+
+4) to overwrite a cell, press the cell you want to edit and 'overwrite' on that cell
+to overwrite.
+
+5) to edit on a cell, press 'F2' key to edit on that cell.
+
+6) to copy a cell, ctrl + c.
+7) to cut a cell, ctrl + x.
+8) to paste on a cell, ctrl + v.
+
+
+
+Navigation keyboard shortcuts:
+
+1) to move one unit down, click on a cell and press 'Enter'.
+2) to move across the cell, click on 'TAB' key.
+3) to move one unit up, press 'shift + enter'.
+4) to move across in a reverse order, press 'Tab + enter'
+5) to move from top to bottom, press 'ctrl + down arrow'.
+6) to move from left to right, press 'ctrl + right arrow'.
+
+
+Data Selection keyboard shortcuts.
+
+1) to select the whole or part of row, click on the cell and
+ press, 'shift + right arrow'.
+2) to select the whole coloum or part of the column, click on the cell 
+and press 'shift + down key'
+3) to select a specific set of rows and colums, click on a cell and then
+press 'shift + down arrow' + 'rightarrow'.
+4) to press all the cells, press 'ctrl + A'
+
+
+
+
+Inserting and Deleting Rows and Columns
+
+1) Press on any column, like A, B, C, D, E, F........ and right click and press 
+	insert.
+2) Press on any row, like 1, 2, 3, 4, 5, 6, 7, ...... and right click and press insert.
+
+
+3) to select the 'entire column', press 'ctrl + spacebar'.
+
+4) to insert column to the left of 'selected entire column', press 'alt + i + c'.
+
+5) to select an 'entire row', press 'shift + spacebar'.
+
+6) to insert a row above a 'selected entire row', press 'alt + i + r'.
+
+7) to delete a row, select the entire row by 'shift + spacebar', then press
+   'ctrl + -'.
+
+8) to delete a column, select the enire column by 'ctrl + spacebar' , 
+then press 'ctrl + -'.
+
+
+
+
+
+Auto Fit Row and Column Size:
+
+1) click on any column like A, B, C, D, E..... and when you see a down arrow, 
+you can resize them
+2) click on any row like 1, 2, 3, 4, 5, 6... and when you see a down arrow, 
+you can resize them
+3) another way, press 'alt + o + c + a' on columns like A, B, C, D.... and 
+ press 'alt + o + r + a' on rows like 1, 2, 3, 4, 5....,
+ it will autofit the rows and columns
+
+
+
+Freeze Panes and Split Boxes:
+
+when you are navigating down, you see lots of rows and columns of data,
+the data headers like order id, customer id, product type and unit price
+are going to dissapear. So, inorder to see that, go to view -> freeze panes.
+Freezepanes allows you to freeze specific parts of the excel.
+
+1) First click on the rows like 1, 2, 3....., you want to freeze and then go to 
+	view-> freezepanes->freeze top rows.
+2) For the columns, you have to click on the columns like A,B,C, D...
+,you want to freeze and then go to view->freezepanes->freeze top columns.
+
+
+Inorder to unfreeze them, click on 'unfreeze panes'.
+
+Now, if you have thousands of rows and columns, there is another method,
+it is called split screens.
+
+1) press on any cell. In my case, press 'A9', go to view->split
+
+2) to split a row, click on row like 1, 2, 3, etc and go to view->split.
+
+
+
+
+Formatting Numbers:
+
+First of all, write a number on a cell or if any data present in the cell
+and you can to format that part of the data, so first select that part of
+the data, you want to format the datas on.
+
+
+1) press 'ctrl + 1' to see format number options.
+2) Another way, go to Home->General, you can see 'General' in a drop down link
+and click on it, you see the options.
+
+First, click on the cell, you 
+want to format on,  in my case, it is F2, then,
+press 'ctrl + shift + down-arrow', it is click on the cells from top
+to bottom.
+
+----Press 'ctrl + z' to undo it.----
+
+'ctrl + shift + 1' it will format the cells you selected to numbers.
+
+Now, click on cell G1, press 'ctrl + shift + down arrow', then 
+press 'ctrl + 1', press on currency or press 'ctrl + shift + 4', it will 
+convert it to currency sign.
+
+'ctrl + shift + 5', is used to convert to percentage.
+
+
+
+
+
+Formating Cells:
+
+You will usually use fill color or fill font options, font-size, bold, italic and
+underline. You will also use wrap text if you do not want to expand the column.
+There is also merge and center.
+You have to click on the cell, that you want to have apply those functions on.
+
+
+
+Grouping and Hiding Rows and Columns.
+
+1) select on a group of rows and columns you want to hide, like unit price, 
+total order value and quantity. Select it all from top to bottom.
+
+Now, click on Data->Group.
+
+This is mainly used when you want to print a part of the data and you would
+like to omit certain data which you would not like to show to views.
+
+
+
+
+
+
+
+
+To hide or unhide a tabs:
+click on the 'data' menu two time or press 'ctrl + F1'.
+
+
+'ctrl + home' takes you to the first cell.
+
+
+
+
+
+
